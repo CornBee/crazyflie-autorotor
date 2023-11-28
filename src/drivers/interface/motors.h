@@ -137,12 +137,13 @@
   #define MOTORS_BL_POLARITY           TIM_OCPolarity_Low
 #endif
 
-#define NBR_OF_MOTORS 4
+// single-actuator
+#define NBR_OF_MOTORS 1
 // Motors IDs define
 #define MOTOR_M1  0
-#define MOTOR_M2  1
-#define MOTOR_M3  2
-#define MOTOR_M4  3
+// #define MOTOR_M2  1
+// #define MOTOR_M3  2
+// #define MOTOR_M4  3
 
 // Test defines
 #define MOTORS_TEST_RATIO         (uint16_t)(0.2*(1<<16))

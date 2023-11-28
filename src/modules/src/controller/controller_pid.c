@@ -61,6 +61,10 @@ void controllerPid(control_t *control, const setpoint_t *setpoint,
   control->controlMode = controlModeLegacy;
 
   if (RATE_DO_EXECUTE(ATTITUDE_RATE, stabilizerStep)) {
+      // Set desired roll and pitch to zero to maintain parallel orientation to the ground
+    attitudeDesired.roll = 0;
+    attitudeDesired.pitch = 0;
+
     // Rate-controled YAW is moving YAW angle setpoint
     if (setpoint->mode.yaw == modeVelocity) {
       attitudeDesired.yaw = capAngle(attitudeDesired.yaw + setpoint->attitudeRate.yaw * ATTITUDE_UPDATE_DT);
